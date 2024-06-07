@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Luas dan Volume Bola</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Replace "style.css" with the path to your CSS file -->
+</head>
+<body>
+    <h1>Kalkulator Luas dan Volume Bola</h1>
+
+    <label for="jari-jari">Jari-Jari Bola:</label>
+    <input type="text" id="jari-jari" placeholder="Masukkan jari-jari">
+    <br><br>
+
+    <button onclick="hitung()">Hitung Luas dan Volume</button>
+    <br><br>
+
+    <label for="luas-permukaan">Luas Permukaan Bola:</label>
+    <input type="text" id="luas-permukaan" readonly>
+    <br><br>
+
+    <label for="volume">Volume Bola:</label>
+    <input type="text" id="volume" readonly>
+    <br><br>
+
+    <script>
+        function hitung() {
+            var jariJari = parseFloat(document.getElementById('jari-jari').value);
+            var luasPermukaan = 4 * Math.PI * Math.pow(jariJari, 2);
+            var volume = (4/3) * Math.PI * Math.pow(jariJari, 3);
+
+            document.getElementById('luas-permukaan').value = luasPermukaan.toFixed(2);
+            document.getElementById('volume').value = volume.toFixed(2);
+        }
+    </script>
+</body>
+</html>
